@@ -82,12 +82,12 @@ function movieThis(input = "Mr. Nobody") {
 var movieInfo = 
 `Title: ${data.Title}, 
 Year released: ${data.Year}, 
-imdb Rating: ${data.imdbRating}, 
-Plot: ${data.Plot}, 
-Movie Language: ${data.Language}, 
-Country Made: ${data.Country}, 
-Actors: ${data.Actors}, 
-Rotten Tomatoes Rating: ${data.Ratings[1].Value}`;}
+imdb Rating: ${data.imdbRating},
+Rotten Tomatoes Rating: ${data.Ratings[1].Value},
+Country Produced: ${data.Country},  
+Movie Language: ${data.Language},
+Plot: ${data.Plot},  
+Actors: ${data.Actors}`;}
 
 		fs.appendFile("log.txt", " Movie Information: " + movieInfo, function(err) {
 		    if (err) {
@@ -99,7 +99,12 @@ Rotten Tomatoes Rating: ${data.Ratings[1].Value}`;}
 }
 
 // function doWhatSays() {
-
+//Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.    
+//It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
+//Feel free to change the text in that document to test out the feature for other commands.
 // }
+   
+// After completing the homework please add the piece to your portfolio. Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment. To receive an 'A' on any assignment, you must link to it from your portfolio.
+
 
   
