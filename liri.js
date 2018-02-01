@@ -36,28 +36,19 @@ function myTweets() {
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
       for (var i = 0; i < tweets.length; i++) {
-        var tweetInfo =`Tweet: ${tweets[i].text}, Created on: ${tweets[i].created_at}`;
+        var tweetInfo = 
+`Tweet: ${tweets[i].text}, 
+Created on: ${tweets[i].created_at}`;
+        console.log(tweetInfo);
         fs.appendFile("log.txt", " Tweet Information: " + tweetInfo, function(err) {
           if (err) {
             return console.log(err);
           }
-          console.log(tweetInfo);
         });
       }
     }
   });
 }
-
-
-    // fs.appendFile("log.txt", " Song Information: " + songInfo, function(err) {
-    //   if (err) {
-    //     return console.log(err);
-    //   }
-    //   console.log(songInfo);
-    // });
-    // if (err) {
-    //   return console.log('Error occurred: ' + err);
-    // }
 
 function spotifySong(input = "gangnam style") {
   spotify.search({ type: 'track', query: input, limit: 1 }, function(err, data) {
