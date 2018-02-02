@@ -9,8 +9,11 @@ const spotify = new Spotify(keys.spotify);
 const client = new Twitter(keys.twitter);
 
 var command = process.argv[2];
-var userInput = process.argv[3];
-var result = "";
+var nodeArgs = process.argv;
+var userInput = "";
+for (var i = 3; i < nodeArgs.length; i++) {
+  userInput = userInput + " " + nodeArgs[i];
+}
 
 function runCommands(commands, input) {
   switch (commands) {
@@ -72,6 +75,8 @@ Song name: ${d.name}`;
 
 function movieThis(input = "Mr. Nobody") {
   var queryUrl = "http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=64d75e71";
+  console.log(input);
+  console.log(queryUrl);
   request(queryUrl, function(error, response, body) {
     if (!error && response.statusCode === 200) {
       var data = JSON.parse(body);
@@ -94,6 +99,22 @@ Actors: ${data.Actors}`;
   });
 }
 
+// var nodeArgs = process.argv;
+
+// // Create an empty string for holding the address
+// var address = "";
+
+// // Capture all the words in the address (again ignoring the first two Node arguments)
+// for (var i = 2; i < nodeArgs.length; i++) {
+
+//   // Build a string with the address.
+//   address = address + " " + nodeArgs[i];
+
+// }
+
+
+
+
 function doWhatSays() {
   fs.readFile("random.txt", "utf8", function(error, data) {
     if (error) {
@@ -103,6 +124,4 @@ function doWhatSays() {
     runCommands(dataArr[0], dataArr[1]);
   });
 }
-
-// After completing the homework please add the piece to your portfolio. Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment. To receive an 'A' on any assignment, you must link to it from your portfolio.
 runCommands(command, userInput);
