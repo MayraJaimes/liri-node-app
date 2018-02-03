@@ -99,22 +99,6 @@ Actors: ${data.Actors}`;
   });
 }
 
-// var nodeArgs = process.argv;
-
-// // Create an empty string for holding the address
-// var address = "";
-
-// // Capture all the words in the address (again ignoring the first two Node arguments)
-// for (var i = 2; i < nodeArgs.length; i++) {
-
-//   // Build a string with the address.
-//   address = address + " " + nodeArgs[i];
-
-// }
-
-
-
-
 function doWhatSays() {
   fs.readFile("random.txt", "utf8", function(error, data) {
     if (error) {
