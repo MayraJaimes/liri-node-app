@@ -8,10 +8,11 @@ const request = require("request");
 const spotify = new Spotify(keys.spotify);
 const client = new Twitter(keys.twitter);
 
-var command = process.argv[2];
 var nodeArgs = process.argv;
-var userInput = "";
-for (var i = 3; i < nodeArgs.length; i++) {
+var command = process.argv[2];
+var userInput = process.argv[3];
+
+for (var i = 4; i < nodeArgs.length; i++) {
   userInput = userInput + " " + nodeArgs[i];
 }
 
@@ -75,7 +76,6 @@ Song name: ${d.name}`;
 
 function movieThis(input = "Mr. Nobody") {
   var queryUrl = "http://www.omdbapi.com/?t=" + input + "&y=&plot=short&apikey=64d75e71";
-  console.log(input);
   console.log(queryUrl);
   request(queryUrl, function(error, response, body) {
     if (!error && response.statusCode === 200) {
