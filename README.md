@@ -1,22 +1,25 @@
-# liri-node-app
+# Liri
 
-LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a _Language_ Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
+## Overview
 
-# What Each Command Does
+Liri is like iPhone's Siri. However, while Siri is a Speech Interpretation and Recognition Interface, Liri is a _Language_ Interpretation and Recognition Interface. Liri will be a command line node app that takes in parameters and gives the user back data.
 
+## Description
+
+Below are the list of commands that liri is able to respond to:
 1. `node liri.js my-tweets`
-   * This will show your last 20 tweets and when they were created at in your terminal/bash window.
+   * This will show the user's last 20 tweets and when they were created at in their terminal/bash window.
 
 2. `node liri.js spotify-this-song '<song name here>'`
-   * This will show the following information about the song in your terminal/bash window
+   * This will show the following information about the song in the terminal/bash window
      * Artist(s)
      * The song's name
      * A preview link of the song from Spotify   
      * The album that the song is from
-   * If no song is provided then your program will default to "The Sign" by Ace of Base.
+   * If no song is provided then the program defaults to "The Sign" by Ace of Base.
      
 3. `node liri.js movie-this '<movie name here>'`
-   * This will output the following information to your terminal/bash window:
+   * This will output the following information to the terminal/bash window:
      ```
        * Title of the movie.
        * Year the movie came out.
@@ -33,3 +36,8 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
   * LIRI takes the text inside of random.txt and then use it to call one of LIRI's commands. 
   
 All the data for the commands that run will be appended to a the text file called `log.txt`.
+
+## Technologies used:
+
+* AJAX
+* Node.js
